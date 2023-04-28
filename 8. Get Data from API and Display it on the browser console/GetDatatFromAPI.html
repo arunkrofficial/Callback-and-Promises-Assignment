@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Data from API and Display it on the browser console</title>
+</head>
+<body>
+  <h1>Get Data from API and Display it on the browser console</h1>
+  <!-- create a script tag to include our JavaScript code -->
+  <script>
+    // use the fetch() function to retrieve data from the API endpoint
+    // this function returns a Promise that resolves to the Response object
+
+    fetch('https://jsonplaceholder.typicode.com/posts')
+
+      // use the json() method of the Response object to parse the response as JSON
+      // this method returns a Promise that resolves to the parsed JSON data
+      .then(response => response.json())
+
+      // use the parsed JSON data in our code, e.g. log it to the console
+      .then(data => console.log(data))
+      
+      // handle any errors that may occur, e.g. log them to the console
+      .catch(error => console.error(error));
+  </script>
+</body>
+</html>
